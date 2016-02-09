@@ -24,8 +24,8 @@ mkdir -p eggs
 echo "Running $PYTHON bootstrap-buildout.py -c $CONFIG --buildout-version=$ZCBUILDOUT --setuptools-version=$SETUPTOOLS"
 $PYTHON "bootstrap-buildout.py" -c $CONFIG --buildout-version $ZCBUILDOUT --setuptools-version=$SETUPTOOLS
 
-mkdir -p $ZOPE_VAR
-mkdir -p $ZOPE_CONF
+mkdir -p $Z_VAR
+mkdir -p $Z_CONF
 
 #
 # Run buildout
@@ -33,5 +33,5 @@ mkdir -p $ZOPE_CONF
 echo "Running bin/buildout -c $CONFIG"
 ./bin/buildout -c $CONFIG
 
-chown -R zope:zope $ZOPE_CONF
-chown -R zope:zope $ZOPE_VAR
+chown -R zope:zope $Z_CONF
+chown -R zope:zope $Z_VAR

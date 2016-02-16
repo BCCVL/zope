@@ -1,7 +1,7 @@
 FROM hub.bccvl.org.au/centos/centos7-epel:2016-02-04
 
 
-RUN yum install -y gcc python-devel && \
+RUN yum install -y gcc python-devel gettext && \
     yum clean all
 
 ENV SETUPTOOLS 19.6.1

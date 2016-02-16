@@ -24,6 +24,12 @@ mkdir -p eggs
 echo "Running $PYTHON bootstrap-buildout.py -c $CONFIG --buildout-version=$ZCBUILDOUT --setuptools-version=$SETUPTOOLS"
 $PYTHON "bootstrap-buildout.py" -c $CONFIG --buildout-version $ZCBUILDOUT --setuptools-version=$SETUPTOOLS
 
+# compile all .po files inside buildout folder
+for po in $(find . -path '*/LC_MESSAGES/*.po'); do
+    msgfmt -o ${po/%po/mo} $po;
+done
+
+
 mkdir -p $Z_VAR
 mkdir -p $Z_CONF
 

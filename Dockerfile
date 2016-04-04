@@ -2,7 +2,7 @@ FROM hub.bccvl.org.au/centos/centos7-epel:2016-02-04
 
 
 RUN yum -y install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm && \
-    yum install -y gcc python-devel gettext && \
+    yum install -y gcc python-devel gettext mailcap && \
     yum install -y postgresql95-devel && \
     yum clean all
 

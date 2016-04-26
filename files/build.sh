@@ -40,3 +40,6 @@ done
 
 chown -R zope:zope $Z_CONF
 chown -R zope:zope $Z_VAR
+# make sure all python package files are readable
+find eggs -type f -exec chmod 644 {} +
+find eggs -type d -exec chmod 755 {} +
